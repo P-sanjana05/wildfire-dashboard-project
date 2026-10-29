@@ -1,0 +1,165 @@
+{
+  "split_info": {
+    "train_size": 56669,
+    "test_size": 16552,
+    "train_period": "2020-01-01 to 2020-08-31",
+    "test_period": "2020-09-01 to 2020-12-31"
+  },
+  "best_model": "LightGBM",
+  "features": [
+    "temp_max_c",
+    "temp_min_c",
+    "temp_range_c",
+    "rmin",
+    "rmax",
+    "vs",
+    "pr",
+    "bi",
+    "erc",
+    "vpd",
+    "fm100",
+    "fm1000",
+    "Elevation",
+    "Slope",
+    "Aspect",
+    "TRI",
+    "TPI",
+    "DISCOVERY_DOY",
+    "Month",
+    "STATE",
+    "NWCG_GENERAL_CAUSE"
+  ],
+  "class_names": [
+    "Low (<10 ac)",
+    "Moderate (10-99 ac)",
+    "Severe (>=100 ac)"
+  ],
+  "models": {
+    "XGBoost": {
+      "accuracy": 0.8155,
+      "macro_f1": 0.4218,
+      "weighted_f1": 0.8223,
+      "macro_recall": 0.4469,
+      "macro_precision": 0.4168,
+      "confusion_matrix": [
+        [
+          0.8925,
+          0.0585,
+          0.049
+        ],
+        [
+          0.7272,
+          0.1858,
+          0.087
+        ],
+        [
+          0.5957,
+          0.1418,
+          0.2624
+        ]
+      ],
+      "confusion_counts": [
+        [
+          13122,
+          860,
+          721
+        ],
+        [
+          1037,
+          265,
+          124
+        ],
+        [
+          252,
+          60,
+          111
+        ]
+      ],
+      "model_path": "C:\\Users\\palva\\.gemini\\antigravity\\scratch\\wildfire_dashboard\\models\\xgboost_model.joblib"
+    },
+    "LightGBM": {
+      "accuracy": 0.8,
+      "macro_f1": 0.4228,
+      "weighted_f1": 0.816,
+      "macro_recall": 0.4458,
+      "macro_precision": 0.4115,
+      "confusion_matrix": [
+        [
+          0.8687,
+          0.0909,
+          0.0404
+        ],
+        [
+          0.6592,
+          0.27,
+          0.0708
+        ],
+        [
+          0.5603,
+          0.2411,
+          0.1986
+        ]
+      ],
+      "confusion_counts": [
+        [
+          12773,
+          1336,
+          594
+        ],
+        [
+          940,
+          385,
+          101
+        ],
+        [
+          237,
+          102,
+          84
+        ]
+      ],
+      "model_path": "C:\\Users\\palva\\.gemini\\antigravity\\scratch\\wildfire_dashboard\\models\\lightgbm_model.joblib"
+    },
+    "CatBoost": {
+      "accuracy": 0.783,
+      "macro_f1": 0.3804,
+      "weighted_f1": 0.7983,
+      "macro_recall": 0.4497,
+      "macro_precision": 0.4009,
+      "confusion_matrix": [
+        [
+          0.8619,
+          0.0277,
+          0.1104
+        ],
+        [
+          0.7644,
+          0.0806,
+          0.155
+        ],
+        [
+          0.5437,
+          0.0496,
+          0.4066
+        ]
+      ],
+      "confusion_counts": [
+        [
+          12673,
+          407,
+          1623
+        ],
+        [
+          1090,
+          115,
+          221
+        ],
+        [
+          230,
+          21,
+          172
+        ]
+      ],
+      "model_path": "C:\\Users\\palva\\.gemini\\antigravity\\scratch\\wildfire_dashboard\\models\\catboost_model.joblib"
+    }
+  }
+}
